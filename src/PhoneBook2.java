@@ -20,12 +20,12 @@ public class PhoneBook2 {
         phoneBook.put("Скажем", new ArrayList<>(Arrays.asList("2-221", "2-222")));
         phoneBook.put("Баю-Бай", new ArrayList<>(Arrays.asList("3-331", "3-332")));
 
-        // добавление нового номера абоненту с проверкой, что абонент уже есть в map.
+        // добавление нового номера абоненту с проверкой, что такой абонент уже есть в map.
         addNummer ((LinkedHashMap<String, ArrayList<String>>) phoneBook,
                    (String) "Баю-Бай", (String) "8-881");
         System.out.println("Телефонная книга :\n" + phoneBook);
 
-        // удаление номера абонента с проверкой, что абонент есть в map.
+        // удаление номера абонента с проверкой, что такой абонент и такой номер у него есть в map.
         removeNummer ((LinkedHashMap<String, ArrayList<String>>) phoneBook,
                    (String) "Баю-Бай", (String) "8-881");
         System.out.println("Телефонная книга после удаления одного номера :\n" + phoneBook);
@@ -54,8 +54,11 @@ public class PhoneBook2 {
         public static void removeNummer (LinkedHashMap<String, ArrayList<String>> phoneBook,
                                      String name, String nummer) {
         if (!phoneBook.keySet().contains(name)) {
-        throw new NoSuchElementException("Abonent not exist");
+        throw new NoSuchElementException("The abonent not exist");
         }
+        else if (!phoneBook.get(name).contains(nummer)) {
+            throw new NoSuchElementException("The abonent don't has this number");
+            }
         else {
             phoneBook.get(name).remove(nummer);
         }
