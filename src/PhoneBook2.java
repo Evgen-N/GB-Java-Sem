@@ -45,7 +45,7 @@ public class PhoneBook2 {
         public static void addNummer (LinkedHashMap<String, ArrayList<String>> phoneBook,
                                      String name, String nummer) {
         if (!phoneBook.keySet().contains(name)) {
-        throw new NoSuchElementException("Abonent not exist");
+        throw new NoSuchElementException("Такого абонента не существует!");
         }
         else {
             phoneBook.get(name).add(nummer);
@@ -54,10 +54,10 @@ public class PhoneBook2 {
         public static void removeNummer (LinkedHashMap<String, ArrayList<String>> phoneBook,
                                      String name, String nummer) {
         if (!phoneBook.keySet().contains(name)) {
-        throw new NoSuchElementException("The abonent not exist");
+        throw new NoSuchElementException("Такого абонента не существует!");
         }
         else if (!phoneBook.get(name).contains(nummer)) {
-            throw new NoSuchElementException("The abonent don't has this number");
+            throw new NoSuchElementException("Такого номера нет у данного абонента!");
             }
         else {
             phoneBook.get(name).remove(nummer);
