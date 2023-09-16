@@ -16,7 +16,7 @@ public class PhoneBook2 {
         Map<String, ArrayList<String>> phoneBook = new LinkedHashMap <>();
 
         phoneBook.put("Иванов", new ArrayList<>(Arrays.asList("0-001", "0-002", "0-003")));
-        phoneBook.put("Задень", new ArrayList<>(Arrays.asList("1-111", "1-112", "1-113")));
+        phoneBook.put("ЗаДень", new ArrayList<>(Arrays.asList("1-111", "1-112", "1-113")));
         phoneBook.put("Скажем", new ArrayList<>(Arrays.asList("2-221", "2-222")));
         phoneBook.put("Баю-Бай", new ArrayList<>(Arrays.asList("3-331", "3-332")));
 
